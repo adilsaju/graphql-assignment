@@ -1,12 +1,12 @@
 import { FC, useState } from "react";
-import { Car } from "../../gql/graphql";
+import { CarType } from "../../gql/graphql";
 import { Card } from "antd";
 import { UpdateCarForm } from "../forms/UpdateCarForm";
 import { EditOutlined } from "@ant-design/icons";
 import { DeleteCarButton } from "../../buttons/DeleteCarButton";
 import { Styles } from "../../types";
 
-export const CarCard: FC<{ car: Car }> = ({ car }) => {
+export const CarCard: FC<{ car: CarType }> = ({ car }) => {
   const [isEditMode, setEditMode] = useState(false);
 
   const formatter = new Intl.NumberFormat("en-CA", {

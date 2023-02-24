@@ -5,12 +5,12 @@ import { FC } from "react";
 // import { GET_CONTACTS, REMOVE_CONTACT } from "../../queries";
 import { DELETE_CAR, GET_PERSONS_WITH_CARS, GET_PEOPLES } from "../queries";
 
-type DeleteCarButtonProps = {
+type DeleteCarBtnProps = {
   id: string;
   ownerId: string;
 };
 
-export const DeleteCarButton: FC<DeleteCarButtonProps> = ({ id, ownerId }) => {
+export const DeleteCarButton: FC<DeleteCarBtnProps> = ({ id, ownerId }) => {
   const [deleteCar] = useMutation(DELETE_CAR, {
     update(cache, context) {
       if (window.location.href.includes("people")) {

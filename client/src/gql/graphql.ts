@@ -14,8 +14,8 @@ export type Scalars = {
   Float: number;
 };
 
-export type Car = {
-  __typename?: 'Car';
+export type CarType = {
+  __typename?: 'CarType';
   id: Scalars['String'];
   make: Scalars['String'];
   model: Scalars['String'];
@@ -26,11 +26,11 @@ export type Car = {
 
 export type Mutation = {
   __typename?: 'Mutation';
-  createCar?: Maybe<Car>;
+  createCar?: Maybe<CarType>;
   createPerson?: Maybe<Person>;
-  deleteCar?: Maybe<Car>;
+  deleteCar?: Maybe<CarType>;
   deletePerson?: Maybe<Person>;
-  updateCar?: Maybe<Car>;
+  updateCar?: Maybe<CarType>;
   updatePerson?: Maybe<Person>;
 };
 
@@ -80,7 +80,7 @@ export type MutationUpdatePersonArgs = {
 
 export type Person = {
   __typename?: 'Person';
-  cars?: Maybe<Array<Maybe<Car>>>;
+  cars?: Maybe<Array<Maybe<CarType>>>;
   firstName: Scalars['String'];
   id: Scalars['String'];
   lastName: Scalars['String'];
@@ -88,8 +88,8 @@ export type Person = {
 
 export type Query = {
   __typename?: 'Query';
-  carById?: Maybe<Car>;
-  cars?: Maybe<Array<Maybe<Car>>>;
+  carById?: Maybe<CarType>;
+  cars?: Maybe<Array<Maybe<CarType>>>;
   people?: Maybe<Array<Maybe<Person>>>;
   person?: Maybe<Person>;
   personWithCars?: Maybe<Person>;
@@ -113,19 +113,19 @@ export type QueryPersonWithCarsArgs = {
 export type GetPeopleQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type GetPeopleQuery = { __typename?: 'Query', people?: Array<{ __typename?: 'Person', id: string, firstName: string, lastName: string, cars?: Array<{ __typename?: 'Car', id: string, year: number, make: string, model: string, price: number, personId: string } | null> | null } | null> | null };
+export type GetPeopleQuery = { __typename?: 'Query', people?: Array<{ __typename?: 'Person', id: string, firstName: string, lastName: string, cars?: Array<{ __typename?: 'CarType', id: string, year: number, make: string, model: string, price: number, personId: string } | null> | null } | null> | null };
 
 export type GetCarsQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type GetCarsQuery = { __typename?: 'Query', cars?: Array<{ __typename?: 'Car', id: string, year: number, make: string, model: string, price: number, personId: string } | null> | null };
+export type GetCarsQuery = { __typename?: 'Query', cars?: Array<{ __typename?: 'CarType', id: string, year: number, make: string, model: string, price: number, personId: string } | null> | null };
 
 export type PersonWithCarsQueryVariables = Exact<{
   id: Scalars['String'];
 }>;
 
 
-export type PersonWithCarsQuery = { __typename?: 'Query', personWithCars?: { __typename?: 'Person', id: string, firstName: string, lastName: string, cars?: Array<{ __typename?: 'Car', id: string, year: number, make: string, model: string, price: number, personId: string } | null> | null } | null };
+export type PersonWithCarsQuery = { __typename?: 'Query', personWithCars?: { __typename?: 'Person', id: string, firstName: string, lastName: string, cars?: Array<{ __typename?: 'CarType', id: string, year: number, make: string, model: string, price: number, personId: string } | null> | null } | null };
 
 export type CreatePersonMutationVariables = Exact<{
   id: Scalars['String'];
@@ -134,7 +134,7 @@ export type CreatePersonMutationVariables = Exact<{
 }>;
 
 
-export type CreatePersonMutation = { __typename?: 'Mutation', createPerson?: { __typename?: 'Person', id: string, firstName: string, lastName: string, cars?: Array<{ __typename?: 'Car', id: string, year: number, make: string, model: string, price: number, personId: string } | null> | null } | null };
+export type CreatePersonMutation = { __typename?: 'Mutation', createPerson?: { __typename?: 'Person', id: string, firstName: string, lastName: string, cars?: Array<{ __typename?: 'CarType', id: string, year: number, make: string, model: string, price: number, personId: string } | null> | null } | null };
 
 export type CreateCarMutationVariables = Exact<{
   id: Scalars['String'];
@@ -146,7 +146,7 @@ export type CreateCarMutationVariables = Exact<{
 }>;
 
 
-export type CreateCarMutation = { __typename?: 'Mutation', createCar?: { __typename?: 'Car', id: string, year: number, make: string, model: string, price: number, personId: string } | null };
+export type CreateCarMutation = { __typename?: 'Mutation', createCar?: { __typename?: 'CarType', id: string, year: number, make: string, model: string, price: number, personId: string } | null };
 
 export type UpdatePersonMutationVariables = Exact<{
   id: Scalars['String'];
@@ -167,7 +167,7 @@ export type UpdateCarMutationVariables = Exact<{
 }>;
 
 
-export type UpdateCarMutation = { __typename?: 'Mutation', updateCar?: { __typename?: 'Car', id: string, year: number, make: string, model: string, price: number, personId: string } | null };
+export type UpdateCarMutation = { __typename?: 'Mutation', updateCar?: { __typename?: 'CarType', id: string, year: number, make: string, model: string, price: number, personId: string } | null };
 
 export type DeletePersonMutationVariables = Exact<{
   id: Scalars['String'];
@@ -181,7 +181,7 @@ export type DeleteCarMutationVariables = Exact<{
 }>;
 
 
-export type DeleteCarMutation = { __typename?: 'Mutation', deleteCar?: { __typename?: 'Car', id: string, year: number, make: string, model: string, price: number, personId: string } | null };
+export type DeleteCarMutation = { __typename?: 'Mutation', deleteCar?: { __typename?: 'CarType', id: string, year: number, make: string, model: string, price: number, personId: string } | null };
 
 
 export const GetPeopleDocument = { "kind": "Document", "definitions": [{ "kind": "OperationDefinition", "operation": "query", "name": { "kind": "Name", "value": "GetPeople" }, "selectionSet": { "kind": "SelectionSet", "selections": [{ "kind": "Field", "name": { "kind": "Name", "value": "people" }, "selectionSet": { "kind": "SelectionSet", "selections": [{ "kind": "Field", "name": { "kind": "Name", "value": "id" } }, { "kind": "Field", "name": { "kind": "Name", "value": "firstName" } }, { "kind": "Field", "name": { "kind": "Name", "value": "lastName" } }, { "kind": "Field", "name": { "kind": "Name", "value": "cars" }, "selectionSet": { "kind": "SelectionSet", "selections": [{ "kind": "Field", "name": { "kind": "Name", "value": "id" } }, { "kind": "Field", "name": { "kind": "Name", "value": "year" } }, { "kind": "Field", "name": { "kind": "Name", "value": "make" } }, { "kind": "Field", "name": { "kind": "Name", "value": "model" } }, { "kind": "Field", "name": { "kind": "Name", "value": "price" } }, { "kind": "Field", "name": { "kind": "Name", "value": "personId" } }] } }] } }] } }] } as unknown as DocumentNode<GetPeopleQuery, GetPeopleQueryVariables>;

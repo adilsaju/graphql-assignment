@@ -1,5 +1,5 @@
 import { FC, useState } from "react";
-import { Car, Maybe, Person } from "../../gql/graphql";
+import { CarType, Maybe, Person } from "../../gql/graphql";
 import { Card } from "antd";
 import { CarsList } from "../lists/CarsList";
 import { EditOutlined } from "@ant-design/icons";
@@ -15,7 +15,7 @@ export const PersonCard: FC<{ person: Person }> = ({ person }) => {
   const inTopPage = location.pathname === "/";
 
   const { cars } = person;
-  const isCarsType = (cars: Maybe<Maybe<Car>[]> | undefined): cars is Car[] => {
+  const isCarsType = (cars: Maybe<Maybe<CarType>[]> | undefined): cars is CarType[] => {
     if (!cars) {
       return false;
     }

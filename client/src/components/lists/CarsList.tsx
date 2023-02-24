@@ -1,11 +1,11 @@
 import { FC } from "react";
-import { Car } from "../../gql/graphql";
+import { CarType } from "../../gql/graphql";
 
 import { CarCard } from "../cards/CarCard";
 import { Styles } from "../../types";
 
 type CarListProps = {
-  cars: Car[];
+  cars: CarType[];
 };
 const styles: Styles = {
   container: {

@@ -2,12 +2,12 @@ import { FC, useEffect, useState } from "react";
 import { Button, Form, Input } from "antd";
 import { useMutation } from "@apollo/client";
 import { GET_PEOPLES, UPDATE_CAR } from "../../queries";
-import { Car } from "../../gql/graphql";
+import { CarType } from "../../gql/graphql";
 import { OwnerSelectBox } from "./OwnerSelectBox";
 import { Styles } from "../../types";
 
 type UpdateCarFormProps = {
-  data: Car;
+  data: CarType;
   setEditMode: any;
 };
 

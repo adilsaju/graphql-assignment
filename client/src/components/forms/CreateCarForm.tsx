@@ -71,7 +71,7 @@ export const CreateCarForm: FC = () => {
       optimisticResponse: {
         __typename: "Mutation",
         createCar: {
-          __typename: "Car",
+          __typename: "CarType",
           id,
           year: Number.parseInt(year),
           make,

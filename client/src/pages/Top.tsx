@@ -38,7 +38,7 @@ export const Top: FC = () => {
       {people.length > 0 && (
         <>
           <AddCar />
-          <People people={people} />
+          <People peoples={people} />
         </>
       )}
     </div>

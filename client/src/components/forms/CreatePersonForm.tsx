@@ -9,10 +9,10 @@ export const CreatePersonForm = () => {
   const [createPerson] = useMutation(CREATE_PERSON);
   const id = uuidv4();
   const [form] = Form.useForm();
-  const [, forceUpdate] = useState({});
+  const [, forceUpd] = useState({});
 
   useEffect(() => {
-    forceUpdate({});
+    forceUpd({});
   }, []);
 
   const onFinish = (values: { firstName: string; lastName: string }) => {

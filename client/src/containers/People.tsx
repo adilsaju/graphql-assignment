@@ -3,12 +3,12 @@ import { PersonCard } from "../components/cards/PersonCard";
 import { SecondaryHeading } from "../headings/SecondaryHeading";
 import { Styles } from "../types";
 
-export const People: FC<{ people: any }> = ({ people }) => {
+export const People: FC<{ peoples: any }> = ({ peoples }) => {
   const [, forceUpdate] = useState({});
 
   useEffect(() => {
     forceUpdate({});
-  }, [people]);
+  }, [peoples]);
 
   const styles: Styles = {
     container: {
@@ -22,7 +22,7 @@ export const People: FC<{ people: any }> = ({ people }) => {
     <>
       <SecondaryHeading text="Records" />
       <div style={styles.container}>
-        {people.map((person: any, index: number) => {
+        {peoples.map((person: any, index: number) => {
           return <PersonCard person={person!} key={index} />;
         })}
       </div>
