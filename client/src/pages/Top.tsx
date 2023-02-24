@@ -9,10 +9,10 @@ import { Styles } from "../types";
 
 export const Top: FC = () => {
   const { loading, data } = useQuery(GET_PEOPLES);
-  const [, forceUpdate] = useState({});
+  const [, forceUpd] = useState({});
 
   useEffect(() => {
-    forceUpdate({});
+    forceUpd({});
   }, []);
 
   const people = data?.people;
